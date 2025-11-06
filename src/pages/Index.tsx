@@ -18,7 +18,7 @@ const Index = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = "CryptoFlow | Modern Cryptocurrency Trading";
+    document.title = "SuPav Solutions | Empowering Your Digital Future";
   }, []);
   
   return (

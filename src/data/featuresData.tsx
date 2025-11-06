@@ -1,35 +1,35 @@
 import React from 'react';
-import { Activity, Lock, Zap, Compass, LineChart, Shield } from 'lucide-react';
+import { Globe, Code, ShoppingCart, Megaphone, BarChart3, ShieldCheck } from 'lucide-react';
 
 export const features = [
   {
-    icon: <Activity className="h-6 w-6" />,
-    title: "Real-time Analytics",
-    description: "Monitor market movements with advanced charts and indicators updated in real-time."
+    icon: <Globe className="h-6 w-6" />,
+    title: "Modern Web Development",
+    description: "We build fast, secure, and scalable websites using cutting-edge technologies like React, Next.js, and WordPress."
   },
   {
-    icon: <Lock className="h-6 w-6" />,
-    title: "Bank-level Security",
-    description: "Your assets are protected with military-grade encryption and multi-factor authentication."
+    icon: <ShoppingCart className="h-6 w-6" />,
+    title: "E-Commerce Solutions",
+    description: "Launch your online store with advanced features, payment gateways, and easy product management for seamless sales."
   },
   {
-    icon: <Zap className="h-6 w-6" />,
-    title: "Instant Execution",
-    description: "Execute trades in milliseconds with our high-performance trading engine."
+    icon: <Megaphone className="h-6 w-6" />,
+    title: "Digital Marketing & SEO",
+    description: "Boost your brand visibility through data-driven digital marketing campaigns, SEO optimization, and social media strategy."
   },
   {
-    icon: <Compass className="h-6 w-6" />,
-    title: "Smart Portfolio",
-    description: "Optimize your crypto holdings with AI-powered portfolio suggestions."
+    icon: <BarChart3 className="h-6 w-6" />,
+    title: "Business Growth Analytics",
+    description: "Track performance with insightful analytics and reports to make informed business decisions and maximize ROI."
   },
   {
-    icon: <LineChart className="h-6 w-6" />,
-    title: "Price Alerts",
-    description: "Never miss an opportunity with customizable price alerts and notifications."
+    icon: <Code className="h-6 w-6" />,
+    title: "Custom Development",
+    description: "Get tailor-made web and software solutions designed specifically to fit your business goals and workflows."
   },
   {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Cold Storage",
-    description: "Majority of assets stored in offline cold wallets for maximum security."
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Reliable Support & Maintenance",
+    description: "We provide continuous support, regular updates, and strong data protection to ensure your website runs smoothly 24/7."
   }
 ];

@@ -1,26 +1,34 @@
 export const testimonials = [
-    {
-      quote: "CryptoFlow has completely transformed my crypto trading experience. The real-time analytics and AI recommendations have significantly improved my returns.",
-      author: "Michael Chen",
-      role: "Full-time Trader",
-      avatar: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=100&h=100&fit=crop"
-    },
-    {
-      quote: "As a beginner, I was intimidated by crypto trading until I found CryptoFlow. Their intuitive interface and educational resources made it easy to start investing confidently.",
-      author: "Sarah Johnson",
-      role: "Tech Entrepreneur",
-      avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop"
-    },
-    {
-      quote: "The security features on CryptoFlow are unmatched. I feel confident keeping my assets on their platform, and the trading fees are the most competitive I've found.",
-      author: "David Rodriguez",
-      role: "Cybersecurity Specialist",
-      avatar: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=100&h=100&fit=crop"
-    },
-    {
-      quote: "Their customer support is phenomenal. Any time I've had a question or issue, the team has resolved it quickly. The platform itself is lightning fast and reliable.",
-      author: "Emma Thompson",
-      role: "Investment Advisor",
-      avatar: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop"
-    }
-  ];
+  {
+    quote:
+      "Supav Solutions built a modern, high-performance, and SEO-friendly website for our business. After the launch, our online leads increased by almost 3x!",
+    author: "Rohit Sharma",
+    role: "Founder, RS Enterprises (Lucknow)",
+    avatar:
+      "https://images.unsplash.com/photo-1603415526960-f7e0328e3d5a?w=100&h=100&fit=crop",
+  },
+  {
+    quote:
+      "Their digital marketing team helped us scale our e-commerce sales by 45% through targeted campaigns and SEO optimization. The results were impressive!",
+    author: "Priya Mehta",
+    role: "E-Commerce Business Owner, Mumbai",
+    avatar:
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop",
+  },
+  {
+    quote:
+      "I really appreciate the professionalism and attention to detail from Supav Solutions. They delivered our project on time and exceeded our expectations in quality.",
+    author: "Arjun Verma",
+    role: "Startup Founder, Bangalore",
+    avatar:
+      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=100&h=100&fit=crop",
+  },
+  {
+    quote:
+      "We got our school website developed by Supav Solutions, and the design and functionality were excellent. Parents and students loved the new interface!",
+    author: "Neha Gupta",
+    role: "School Administrator, Varanasi",
+    avatar:
+      "https://images.unsplash.com/photo-1614289371518-722f2615943d?w=100&h=100&fit=crop",
+  }
+];
