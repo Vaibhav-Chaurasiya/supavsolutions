@@ -1,30 +1,37 @@
 export const faqItems = [
   {
-    question: "What services does Supav Solutions provide?",
-    answer: "Supav Solutions offers a complete range of digital services including web development, e-commerce solutions, digital marketing, SEO optimization, branding, and business automation. We help startups and enterprises build strong online presence and grow their digital reach."
+    question: "What services does SuPav Solutions provide?",
+    answer:
+      "SuPav Solutions offers a full suite of digital services including web development, e-commerce management, digital marketing, SEO optimization, and business automation. We help startups and enterprises strengthen their online presence and achieve measurable growth.",
   },
   {
-    question: "How can Supav Solutions help my business grow?",
-    answer: "We create powerful, conversion-driven websites and marketing campaigns that attract the right audience, enhance customer engagement, and increase sales. Our team combines design, strategy, and technology to deliver measurable business growth."
+    question: "How can SuPav Solutions help my business grow?",
+    answer:
+      "We focus on creating data-driven websites and marketing strategies that attract your ideal audience, enhance customer engagement, and boost conversions. Our team combines creativity, technology, and strategy to drive real, sustainable business growth.",
   },
   {
-    question: "Do you build custom websites or use templates?",
-    answer: "Every project at Supav Solutions is tailored to the client’s needs. We build fully custom websites from scratch using the latest technologies such as React, Next.js, and WordPress, ensuring high performance, scalability, and a unique brand identity."
+    question: "Do you build custom websites or use pre-made templates?",
+    answer:
+      "Every project we deliver is uniquely crafted. SuPav Solutions builds fully custom websites using modern frameworks like React, Next.js, and WordPress. This ensures top performance, scalability, and a brand identity that truly stands out.",
   },
   {
-    question: "What industries do you work with?",
-    answer: "We work across various industries including education, healthcare, retail, real estate, finance, and technology. Our flexible approach allows us to adapt to any business model and deliver solutions that align with your goals."
+    question: "Which industries does SuPav Solutions work with?",
+    answer:
+      "We serve diverse industries including education, healthcare, retail, finance, technology, and real estate. Our adaptable approach allows us to deliver tailored digital solutions that align with your business goals and audience.",
   },
   {
-    question: "How long does it take to develop a website?",
-    answer: "The timeline depends on the complexity of the project. A basic website typically takes 2–3 weeks, while large-scale e-commerce or enterprise platforms may take 1–2 months. We always share a clear roadmap and keep clients updated throughout the process."
+    question: "How long does it take to build a website?",
+    answer:
+      "The timeline depends on the project’s complexity. A standard website usually takes around 2–3 weeks, while larger e-commerce or enterprise-level platforms may take 1–2 months. We provide a detailed project roadmap and keep you informed at every stage.",
   },
   {
-    question: "Does Supav Solutions provide ongoing support and maintenance?",
-    answer: "Yes, we provide comprehensive post-launch support, including website maintenance, content updates, security monitoring, and digital marketing assistance to ensure your business runs smoothly online."
+    question: "Does SuPav Solutions offer ongoing support and maintenance?",
+    answer:
+      "Yes! We provide complete post-launch support, including regular website maintenance, content updates, SEO tracking, security monitoring, and digital marketing management — so your business continues to perform at its best.",
   },
   {
-    question: "How can I get started with Supav Solutions?",
-    answer: "Getting started is simple. Visit our website at supavsolutions.com, fill out the contact form or request a free consultation. Our team will get in touch to understand your goals, propose a strategy, and begin crafting your digital solution."
-  }
+    question: "How can I get started with SuPav Solutions?",
+    answer:
+      "Getting started is simple. Visit our official website at supavsolutions.com and fill out the contact form, or message us directly on WhatsApp. Our team will reach out to understand your needs and propose a personalized digital strategy for your business.",
+  },
 ];

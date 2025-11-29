@@ -1,19 +1,46 @@
-import * as React from "react"
+import * as React from "react";
 
-const MOBILE_BREAKPOINT = 768
+// Define a reusable breakpoint constant
+const MOBILE_BREAKPOINT = 768;
 
-export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+/**
+ * useIsMobile Hook
+ * Returns true if the viewport width is less than MOBILE_BREAKPOINT.
+ * Automatically updates on window resize or media query change.
+ */
+export function useIsMobile(): boolean {
+  const [isMobile, setIsMobile] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
-    const onChange = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    }
-    mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    return () => mql.removeEventListener("change", onChange)
-  }, [])
+    // ✅ Guard against SSR (window undefined)
+    if (typeof window === "undefined") return;
 
-  return !!isMobile
+    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+
+    // Function to update the mobile state
+    const handleChange = (event?: MediaQueryListEvent) => {
+      setIsMobile(event?.matches ?? mql.matches);
+    };
+
+    // Initial check
+    handleChange();
+
+    // ✅ Safari compatibility (older browsers)
+    if (typeof mql.addEventListener === "function") {
+      mql.addEventListener("change", handleChange);
+    } else if (typeof mql.addListener === "function") {
+      mql.addListener(handleChange);
+    }
+
+    // Cleanup
+    return () => {
+      if (typeof mql.removeEventListener === "function") {
+        mql.removeEventListener("change", handleChange);
+      } else if (typeof mql.removeListener === "function") {
+        mql.removeListener(handleChange);
+      }
+    };
+  }, []);
+
+  return isMobile;
 }

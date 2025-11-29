@@ -1,33 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 🔹 Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 🔹 SEO -->
     <title>SuPav Solutions | Empowering Your Digital Future</title>
-    <meta name="description" content="Transforming your online presence into a growth engine — from website design and e-commerce development to complete digital marketing solutions, we make your brand stand out in the digital world." />
+    <meta
+      name="description"
+      content="SuPav Solutions is a digital transformation agency helping startups and enterprises build modern websites, e-commerce platforms, and marketing systems that drive measurable growth."
+    />
+    <meta
+      name="keywords"
+      content="SuPav Solutions, Web Development, E-Commerce Development, Digital Marketing, SEO, Branding, Automation, Noida, India"
+    />
     <meta name="author" content="SuPav Solutions" />
 
-    <meta property="og:title" content="SuPav Solutions | Modern Cryptocurrency Trading Platform" />
-    <meta property="og:description" content="Transforming your online presence into a growth engine — from website design and e-commerce development to complete digital marketing solutions, we make your brand stand out in the digital world." />
+    <!-- 🔹 Open Graph (Social Preview) -->
+    <meta property="og:title" content="SuPav Solutions | Empowering Your Digital Future" />
+    <meta
+      property="og:description"
+      content="We design, develop, and market digital experiences that empower businesses to grow online. Discover the future of your brand with SuPav Solutions."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://supavsolutions.com/" />
+    <meta
+      property="og:image"
+      content="https://supavsolutions.com/assets/og-image-supav.png"
+    />
 
+    <!-- 🔹 Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@SuPav Solutions" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:site" content="@SuPavSolutions" />
+    <meta name="twitter:title" content="SuPav Solutions | Empowering Your Digital Future" />
+    <meta
+      name="twitter:description"
+      content="Transforming your business digitally — with SuPav Solutions’ web, marketing, and automation services."
+    />
+    <meta
+      name="twitter:image"
+      content="https://supavsolutions.com/assets/og-image-supav.png"
+    />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.ico" />
+    <!-- 🔹 Favicon & Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta name="theme-color" content="#4f46e5" />
 
-    <!-- Font preloads -->
+    <!-- 🔹 Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 🔹 Manifest (optional for PWA setup) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ✅ Structured Data (for Google Knowledge Panel) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SuPav Solutions",
+        "url": "https://supavsolutions.com",
+        "logo": "https://supavsolutions.com/logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/supavsolutions",
+          "https://twitter.com/SuPavSolutions",
+          "https://instagram.com/supavsolutions"
+        ],
+        "description": "SuPav Solutions helps businesses grow digitally with modern web development, e-commerce solutions, and marketing automation.",
+        "founder": {
+          "@type": "Person",
+          "name": "Mukul Anand Sharma"
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body class="antialiased bg-[#0A0B10] text-white">
+    <!-- Root Mount Point -->
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <!-- <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script> -->
+
+    <!-- 🧠 Main Script -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- 🚀 Analytics Placeholder (optional)
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
   </body>
 </html>

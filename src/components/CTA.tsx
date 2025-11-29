@@ -23,7 +23,7 @@ const CTA = () => {
             style={{ animationDelay: '0.2s' }}
           >
             From stunning websites to high-performing e-commerce stores and digital marketing that drives real results —
-            Supav Solutions helps your brand reach new heights.
+            SuPav Solutions helps your brand reach new heights.
           </p>
 
           <div

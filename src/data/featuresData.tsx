@@ -1,35 +1,48 @@
-import React from 'react';
-import { Globe, Code, ShoppingCart, Megaphone, BarChart3, ShieldCheck } from 'lucide-react';
+import React from "react";
+import {
+  Globe,
+  Code,
+  ShoppingCart,
+  Megaphone,
+  BarChart3,
+  ShieldCheck,
+} from "lucide-react";
 
 export const features = [
   {
-    icon: <Globe className="h-6 w-6" />,
+    icon: <Globe className="h-6 w-6 text-indigo-400" />,
     title: "Modern Web Development",
-    description: "We build fast, secure, and scalable websites using cutting-edge technologies like React, Next.js, and WordPress."
+    description:
+      "Build high-performing, scalable, and responsive websites using modern technologies like React, Next.js, and WordPress — designed for speed and engagement.",
   },
   {
-    icon: <ShoppingCart className="h-6 w-6" />,
-    title: "E-Commerce Solutions",
-    description: "Launch your online store with advanced features, payment gateways, and easy product management for seamless sales."
+    icon: <ShoppingCart className="h-6 w-6 text-indigo-400" />,
+    title: "E-Commerce Store Management",
+    description:
+      "From setup to growth — we handle your online store’s complete lifecycle with advanced features, secure payment gateways, and seamless user experiences.",
   },
   {
-    icon: <Megaphone className="h-6 w-6" />,
+    icon: <Megaphone className="h-6 w-6 text-indigo-400" />,
     title: "Digital Marketing & SEO",
-    description: "Boost your brand visibility through data-driven digital marketing campaigns, SEO optimization, and social media strategy."
+    description:
+      "Boost your brand reach with data-driven digital marketing, paid ads, and smart SEO strategies that improve visibility and drive real business results.",
   },
   {
-    icon: <BarChart3 className="h-6 w-6" />,
+    icon: <BarChart3 className="h-6 w-6 text-indigo-400" />,
     title: "Business Growth Analytics",
-    description: "Track performance with insightful analytics and reports to make informed business decisions and maximize ROI."
+    description:
+      "Understand your audience, monitor campaigns, and make informed decisions using actionable insights and analytics dashboards.",
   },
   {
-    icon: <Code className="h-6 w-6" />,
-    title: "Custom Development",
-    description: "Get tailor-made web and software solutions designed specifically to fit your business goals and workflows."
+    icon: <Code className="h-6 w-6 text-indigo-400" />,
+    title: "Custom Software Solutions",
+    description:
+      "Get tailor-made software, automation tools, and backend systems — built to align with your unique business workflow and goals.",
   },
   {
-    icon: <ShieldCheck className="h-6 w-6" />,
+    icon: <ShieldCheck className="h-6 w-6 text-indigo-400" />,
     title: "Reliable Support & Maintenance",
-    description: "We provide continuous support, regular updates, and strong data protection to ensure your website runs smoothly 24/7."
-  }
+    description:
+      "Experience peace of mind with 24/7 support, performance monitoring, and secure updates that keep your digital presence running flawlessly.",
+  },
 ];

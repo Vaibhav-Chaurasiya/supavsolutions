@@ -1,86 +1,210 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+/* ----------------------------- */
+/* 🔹 Tailwind Layers */
+/* ----------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ----------------------------- */
+/* 🔹 Base Theme Variables */
+/* ----------------------------- */
 @layer base {
   :root {
+    /* 🎨 Color System */
     --background: 240 10% 4%;
     --foreground: 210 40% 98%;
     --card: 240 10% 6%;
     --card-foreground: 210 40% 98%;
     --popover: 240 10% 6%;
     --popover-foreground: 210 40% 98%;
-    --primary: 263 75% 75%;
+
+    /* Brand Colors */
+    --primary: 260 90% 65%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217 35% 20%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 270 60% 45%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+
+    /* Feedback Colors */
+    --success: 150 80% 40%;
+    --warning: 45 90% 50%;
+    --destructive: 0 65% 40%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+
+    /* UI Neutrals */
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 260 80% 65%;
+
+    /* Sidebar / Layout */
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 260 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 240 3% 16%;
+  }
+
+  /* 🌙 Dark Mode (auto sync) */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 240 10% 5%;
+      --card: 240 10% 8%;
+      --foreground: 210 40% 98%;
+    }
   }
 }
 
+/* ----------------------------- */
+/* 🔹 Base Element Styles */
+/* ----------------------------- */
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased font-inter leading-relaxed;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold text-white;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  a:hover {
+    @apply text-indigo-400;
   }
 }
 
+/* ----------------------------- */
+/* 🔹 Utility Layer Enhancements */
+/* ----------------------------- */
 @layer utilities {
+  /* 🧠 Brand Text Gradient */
   .text-gradient {
-    @apply bg-gradient-to-r from-crypto-purple to-crypto-light-purple bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
   }
 
+  /* 🌈 Hero Gradient Background */
   .bg-gradient-hero {
-    @apply bg-gradient-to-br from-crypto-blue via-[#252A3C] to-[#1E2233];
+    @apply bg-gradient-to-br from-indigo-900 via-[#1A1F2E] to-[#0A0B10];
   }
 
-  .hero-glow:after {
+  /* 💫 Hero Glow */
+  .hero-glow::after {
     content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.15), transparent 70%);
     pointer-events: none;
   }
+
+  /* 🌪️ Smooth Scroll Hide */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ----------------------------- */
+  /* ✨ Scroll Animation Utilities */
+  /* ----------------------------- */
+
+  /* Base Animation */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Directional Variants */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  .fade-in.show {
+    opacity: 1;
+  }
+
+  .slide-left {
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+  }
+
+  .slide-left.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .slide-right {
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+  }
+
+  .slide-right.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* ----------------------------- */
+  /* 🌟 Extra Animation Effects */
+  /* ----------------------------- */
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s infinite ease-in-out;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg;
+  }
+
+  .glass-hover:hover {
+    @apply bg-white/10 border-white/20 transition-all duration-300;
+  }
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+/* ----------------------------- */
+/* 🧩 Font Families */
+/* ----------------------------- */
+.font-inter {
+  font-family: 'Inter', sans-serif;
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.show {
-  opacity: 1;
-  transform: translateY(0);
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
 }

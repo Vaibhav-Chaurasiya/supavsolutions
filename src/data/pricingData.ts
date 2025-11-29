@@ -1,50 +1,47 @@
-// pricingPlansData.ts
+// src/data/pricingPlansData.ts
 
 export const pricingPlans = [
   {
-    name: "Basic",
-    price: { monthly: "$0", annual: "$0" },
-    description: "Perfect for beginners getting started with crypto trading.",
+    name: "Starter Plan",
+    description:
+      "Perfect for startups and small businesses launching their first digital presence with SuPav Solutions.",
     features: [
-      "Access to 20+ cryptocurrencies",
-      "Basic charting tools",
-      "Market data with 15-min delay",
-      "Email support",
-      "Mobile app access"
+      "Responsive website (up to 5 pages)",
+      "Basic SEO setup & Google indexing",
+      "Custom domain & hosting guidance",
+      "Contact form & lead capture integration",
+      "Email & chat support",
+      "1-month free maintenance support",
     ],
-    buttonText: "Get Started"
+    buttonText: "Request Quote",
   },
   {
-    name: "Pro",
-    price: { monthly: "$19", annual: "$15" },
-    description: "Designed for active traders seeking advanced tools.",
+    name: "Growth Plan",
+    description:
+      "Ideal for growing businesses seeking complete digital transformation with web, marketing, and automation solutions.",
     features: [
-      "Access to 50+ cryptocurrencies",
-      "Advanced charting tools",
-      "Real-time market data",
-      "Priority email support",
-      "Reduced trading fees (0.1%)",
-      "API access",
-      "Portfolio analytics"
+      "Dynamic website with CMS",
+      "Advanced SEO & analytics integration",
+      "E-commerce or portfolio integration",
+      "Performance optimization & site security",
+      "Social media marketing strategy",
+      "3-month post-launch support",
     ],
     highlighted: true,
-    buttonText: "Start 7-Day Free Trial"
+    buttonText: "Book Free Consultation",
   },
   {
-    name: "Enterprise",
-    price: { monthly: "$49", annual: "$39" },
-    description: "Comprehensive solution for professional traders.",
+    name: "Enterprise Plan",
+    description:
+      "Best suited for enterprises looking for full-scale digital ecosystem development and ongoing strategic support.",
     features: [
-      "Access to all cryptocurrencies",
-      "Professional-grade charts",
-      "Real-time market data",
-      "24/7 dedicated support",
-      "Zero trading fees",
-      "Advanced API access",
-      "Institutional-grade security",
-      "Custom reporting",
-      "Team management"
+      "Custom web & app development",
+      "Marketing automation & CRM setup",
+      "Data-driven SEO & campaign optimization",
+      "Custom dashboards & analytics",
+      "24/7 dedicated support & reporting",
+      "Annual maintenance & scalability upgrades",
     ],
-    buttonText: "Contact Sales"
-  }
+    buttonText: "Contact Our Team",
+  },
 ];

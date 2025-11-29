@@ -1,23 +1,39 @@
+/* =========================================================
+   🌐 SuPav Solutions — App Global Styles
+   Clean, minimal layout for entry point wrapper
+========================================================= */
+
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
+/* ---------------------------------
+   🧊 Logo Animation & Effects
+--------------------------------- */
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  will-change: transform, filter;
+  transition: all 300ms ease-in-out;
+  filter: drop-shadow(0 0 1em rgba(100, 108, 255, 0.4));
 }
 
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6));
+}
+
+/* Optional Variant (React, SuPav, etc.) */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.7));
+}
+
+/* ✨ Logo Rotation Animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +43,95 @@
   }
 }
 
+/* Only animate if user allows motion */
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .logo-spin {
+    animation: logo-spin infinite 16s linear;
   }
 }
 
+/* ---------------------------------
+   🪟 Card (Glassmorphism Style)
+--------------------------------- */
 .card {
   padding: 2em;
+  margin: 1.5em auto;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
 }
 
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(155, 135, 245, 0.4);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* ---------------------------------
+   🔹 CTA & Info Text
+--------------------------------- */
 .read-the-docs {
-  color: #888;
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin-top: 1.2rem;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.read-the-docs:hover {
+  color: #c3bdf7;
+}
+
+/* ---------------------------------
+   ✨ Background Glow Animation (optional)
+--------------------------------- */
+.glow-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-bg::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(120, 80, 255, 0.08),
+    transparent 70%
+  );
+  animation: rotate-glow 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate-glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------------------
+   ⚡ General Responsiveness
+--------------------------------- */
+@media (max-width: 768px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    height: 4.5em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
 }
