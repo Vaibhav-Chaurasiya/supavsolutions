@@ -16,7 +16,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
-import DivyangJobSupport from "@/pages/DivyangJobSupport";
+import Career from "@/pages/Career";
 
 // React Query Client Instance
 const queryClient = new QueryClient();
@@ -54,7 +54,7 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/divyang-support" element={<DivyangJobSupport />} />
+              <Route path="/career" element={<Career />} />
               {/* ❌ Removed NotFound route */}
             </Routes>
           </main>

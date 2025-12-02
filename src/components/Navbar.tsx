@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
-    { name: "Divyang Job Support", path: "/divyang-support" }, // FIXED
+    { name: "Career", path: "/career" },
   ];
 
   return (
