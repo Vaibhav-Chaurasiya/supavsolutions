@@ -40,7 +40,8 @@ const Career = () => {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-6xl font-extrabold 
+          bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text"
         >
           Career & Divyang Support
         </motion.h1>
@@ -56,14 +57,16 @@ const Career = () => {
           and inclusive opportunities for Divyang candidates.
         </motion.p>
 
+        {/* Gradient underline (same as Contact page) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mx-auto w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mt-6 rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: "140px" }}
+          transition={{ delay: 0.35 }}
+          className="mx-auto w-[140px] h-[3px] bg-gradient-to-r from-indigo-500 to-purple-500 mt-6 rounded-full"
         />
       </section>
 
-      {/* CAREER OPPORTUNITIES */}
+      {/* ================= CAREER OPPORTUNITIES ================= */}
       <section className="container mx-auto px-4 md:px-10 pb-16 grid md:grid-cols-3 gap-8 relative z-10">
         {[
           {
@@ -89,21 +92,24 @@ const Career = () => {
             whileInView="show"
             transition={{ delay: i * 0.2 }}
             className="
-              bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl 
-              transition-all duration-300 shadow-lg
+              group relative bg-white/5 border border-white/10 rounded-3xl p-8 
+              backdrop-blur-xl shadow-lg transition-all duration-300
               hover:border-purple-500/40 hover:shadow-purple-500/30
             "
           >
-            <div className="mb-4">{item.icon}</div>
-            <h3 className="text-xl font-semibold text-indigo-300">
+            {/* Soft glow */}
+            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-20 transition-all duration-300 blur-xl bg-gradient-to-r from-indigo-500 to-purple-600"></div>
+
+            <div className="mb-4 relative z-10">{item.icon}</div>
+            <h3 className="text-xl font-semibold text-indigo-300 relative z-10">
               {item.title}
             </h3>
-            <p className="text-gray-300 mt-2">{item.desc}</p>
+            <p className="text-gray-300 mt-2 relative z-10">{item.desc}</p>
           </motion.div>
         ))}
       </section>
 
-      {/* DIVYANG SUPPORT */}
+      {/* ================= DIVYANG SUPPORT ================= */}
       <section className="container mx-auto px-4 md:px-10 pb-16 grid md:grid-cols-3 gap-8 relative z-10">
         {[
           {
@@ -129,21 +135,23 @@ const Career = () => {
             whileInView="show"
             transition={{ delay: i * 0.2 }}
             className="
-              bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl
-              transition-all duration-300 shadow-lg
+              group relative bg-white/5 border border-white/10 rounded-3xl p-8 
+              backdrop-blur-xl shadow-lg transition-all duration-300
               hover:border-purple-500/40 hover:shadow-purple-500/30
             "
           >
-            <div className="mb-4">{item.icon}</div>
-            <h3 className="text-xl font-semibold text-indigo-300">
+            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-20 transition-all duration-300 blur-xl bg-gradient-to-r from-purple-600 to-indigo-500"></div>
+
+            <div className="mb-4 relative z-10">{item.icon}</div>
+            <h3 className="text-xl font-semibold text-indigo-300 relative z-10">
               {item.title}
             </h3>
-            <p className="text-gray-300 mt-2">{item.desc}</p>
+            <p className="text-gray-300 mt-2 relative z-10">{item.desc}</p>
           </motion.div>
         ))}
       </section>
 
-      {/* AVAILABLE ROLES */}
+      {/* ================= AVAILABLE ROLES ================= */}
       <section className="bg-[#0C0F18] py-16 px-4 md:px-10 relative z-10">
         <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
           Available Roles
@@ -166,7 +174,7 @@ const Career = () => {
               initial="hidden"
               whileInView="show"
               className="
-                flex items-center gap-3 bg-white/5 px-6 py-4 rounded-xl border border-white/10
+                group flex items-center gap-3 bg-white/5 px-6 py-4 rounded-xl border border-white/10
                 backdrop-blur-xl transition-all duration-300
                 hover:border-purple-500/40 hover:shadow-purple-500/20
               "
@@ -178,7 +186,7 @@ const Career = () => {
         </div>
       </section>
 
-      {/* APPLY FORM */}
+      {/* ================= APPLY FORM ================= */}
       <section className="py-20 px-4 md:px-10 max-w-4xl mx-auto relative z-10">
         <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
           Apply Now
@@ -190,7 +198,7 @@ const Career = () => {
 
         <form
           className="
-            grid md:grid-cols-2 gap-6 bg-white/5 border border-white/10 p-8 rounded-3xl 
+            group grid md:grid-cols-2 gap-6 bg-white/5 border border-white/10 p-8 rounded-3xl 
             backdrop-blur-xl shadow-xl transition-all duration-300
             hover:border-purple-500/40 hover:shadow-purple-500/30
           "
@@ -227,7 +235,7 @@ const Career = () => {
             className="
               w-full md:col-span-2 bg-gradient-to-r from-indigo-600 to-purple-600 
               hover:from-indigo-700 hover:to-purple-700 
-              py-3 rounded-xl font-semibold shadow-xl text-white
+              py-3 rounded-xl font-semibold shadow-xl text-white transition-all duration-300
             "
           >
             Submit Application
