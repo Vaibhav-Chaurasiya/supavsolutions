@@ -208,3 +208,18 @@
 .font-poppins {
   font-family: 'Poppins', sans-serif;
 }
+.glass-card {
+  @apply bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-xl hover:border-purple-500/40 hover:shadow-purple-500/30 transition;
+}
+
+.heading {
+  @apply text-2xl md:text-3xl font-bold text-indigo-300;
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow hover:brightness-110;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20;
+}
