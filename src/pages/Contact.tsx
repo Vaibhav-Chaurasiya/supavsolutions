@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Send, PhoneCall, Mail, MapPin, ArrowRightCircle } from "lucide-react";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/FloatingActions";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

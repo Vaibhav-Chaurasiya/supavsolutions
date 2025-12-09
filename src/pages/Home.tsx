@@ -11,7 +11,7 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/FloatingActions";
 import useScrollAnimation from "@/utils/useScrollAnimation";
 
 const Home = () => {
@@ -42,7 +42,7 @@ const Home = () => {
           property="og:description"
           content="Empowering businesses with digital innovation and online growth solutions."
         />
-        <meta property="og:image" content="public/logo.svg" />
+        <meta property="og:image" content="public/logo.png" />
         <meta property="og:url" content="https://supavsolutions.com" />
         <meta name="theme-color" content="#0b1120" />
       </Helmet>

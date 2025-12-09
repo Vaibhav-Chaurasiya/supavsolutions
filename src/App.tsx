@@ -17,8 +17,15 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
 import Career from "@/pages/Career";
+import Login from "@/pages/Login";
+import ForgotPassword from "@/pages/ForgotPassword";
 
-// React Query Client Instance
+// ⭐ NEW PAGE
+import Portfolio from "@/pages/Portfolio"; // 🔥 Portfolio Import
+
+// Floating Actions
+import FloatingActions from "@/components/FloatingActions";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -39,7 +46,7 @@ const App = () => {
             name="keywords"
             content="SuPav Solutions, E-Commerce, Amazon SPN, Flipkart Seller, Web Development, IT Services, Digital Marketing"
           />
-          <meta property="og:image" content="/logo.png" />
+          <meta property="og:image" content="/logo.svg" />
           <meta property="og:url" content="https://supavsolutions.com" />
         </Helmet>
 
@@ -50,17 +57,27 @@ const App = () => {
           {/* ROUTES */}
           <main className="flex-grow">
             <Routes>
+              {/* Public Pages */}
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/career" element={<Career />} />
-              {/* ❌ Removed NotFound route */}
+
+              {/* ⭐ NEW PORTFOLIO ROUTE */}
+              <Route path="/portfolio" element={<Portfolio />} />
+
+              {/* Auth Pages */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
           </main>
 
           <Footer />
         </div>
+
+        {/* Floating Buttons */}
+        <FloatingActions />
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -74,12 +74,7 @@ const Navbar = () => {
             Login
           </Link>
 
-          <Link
-            to="/signup"
-            className="bg-blue-500 px-5 py-2 rounded-full text-white font-medium hover:bg-blue-600 transition"
-          >
-            Sign Up
-          </Link>
+          
         </div>
 
         {/* ------------------------------ MOBILE MENU BUTTON ------------------------------ */}
@@ -120,13 +115,7 @@ const Navbar = () => {
                 Login
               </Link>
 
-              <Link
-                to="/signup"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-blue-500 px-4 py-2 rounded-full text-center text-white hover:bg-blue-600 transition"
-              >
-                Sign Up
-              </Link>
+              
             </div>
           </ul>
         </motion.div>

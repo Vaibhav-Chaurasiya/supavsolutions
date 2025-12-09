@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/FloatingActions";
 import Lottie from "lottie-react";
 import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";

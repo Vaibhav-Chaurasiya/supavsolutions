@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/FloatingActions";
 import { Link } from "react-router-dom";
 import { CheckCircle, Star, Clock, Users } from "lucide-react";
 

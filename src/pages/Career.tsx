@@ -10,7 +10,7 @@ import {
   GraduationCap,
   Rocket,
 } from "lucide-react";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/FloatingActions";
 
 // Fade Up Animation
 const fadeUp = {
