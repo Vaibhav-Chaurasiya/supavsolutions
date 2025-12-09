@@ -7,7 +7,7 @@ export const testimonials = [
     author: "Rohit Sharma",
     role: "Founder, RS Enterprises (Lucknow)",
     avatar:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=faces",
+      "https://res.cloudinary.com/dh5uh5wze/image/upload/v1765310165/IMG-20251210-WA0001_q4yjos.jpg",
   },
   {
     quote:
@@ -15,7 +15,7 @@ export const testimonials = [
     author: "Priya Mehta",
     role: "E-Commerce Business Owner, Mumbai",
     avatar:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop&crop=faces",
+      "https://res.cloudinary.com/dh5uh5wze/image/upload/v1765310166/IMG-20251210-WA0002_bogfpf.jpg",
   },
   {
     quote:
@@ -23,7 +23,7 @@ export const testimonials = [
     author: "Arjun Verma",
     role: "Tech Startup Founder, Bangalore",
     avatar:
-      "https://images.unsplash.com/photo-1603415526960-f7e0328e3d5a?w=100&h=100&fit=crop&crop=faces",
+      "https://res.cloudinary.com/dh5uh5wze/image/upload/v1765310166/IMG-20251210-WA0005_wdwmwn.jpg",
   },
   {
     quote:
@@ -31,7 +31,7 @@ export const testimonials = [
     author: "Neha Gupta",
     role: "School Administrator, Varanasi",
     avatar:
-      "https://images.unsplash.com/photo-1581092795360-fd1b0a4f0f81?w=100&h=100&fit=crop&crop=faces",
+      "https://res.cloudinary.com/dh5uh5wze/image/upload/v1765310167/IMG-20251210-WA0004_bveifg.jpg",
   },
   {
     quote:
@@ -39,6 +39,6 @@ export const testimonials = [
     author: "Amit Raj",
     role: "Operations Head, FinEdge Solutions (Noida)",
     avatar:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=faces",
+      "https://res.cloudinary.com/dh5uh5wze/image/upload/v1765310166/IMG-20251210-WA0003_aovgj1.jpg",
   },
 ];
