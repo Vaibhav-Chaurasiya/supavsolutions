@@ -1,154 +1,170 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  ShieldCheck,
+  Award,
+  CheckCircle2,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#000000] text-gray-400 pt-16 pb-6 relative overflow-hidden">
+    <footer className="bg-[#0c0e12] text-gray-400 pt-20 pb-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
-        {/* ======= Top Section ======= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
-          {/* ===== Legal ===== */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#!" className="hover:text-blue-400 transition-colors">
-                  Terms & Conditions
-                </a>
-              </li>
-              <li>
-                <a href="#!" className="hover:text-blue-400 transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#!" className="hover:text-blue-400 transition-colors">
-                  Return Policy
-                </a>
-              </li>
-            </ul>
-          </div>
 
-          {/* ===== Quick Links ===== */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/" className="hover:text-blue-400 transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* ===== Contact Us ===== */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
-            <p className="text-sm leading-relaxed">
-              <span className="block">
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:info@supavsolutions.com"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  info@supavsolutions.com
-                </a>
-              </span>
-              <span className="block">
-                <strong>Phone:</strong>{" "}
-                <a
-                  href="tel:+919876543210"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  +91 98765 43210
-                </a>
-              </span>
-              <span className="block mt-2 text-sm">
-                Noida, Uttar Pradesh, India
-              </span>
+        {/* ================= TRUST BADGES ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 text-center gap-6 mb-16">
+          
+          {/* Secure */}
+          <div className="flex flex-col items-center gap-2 group hover:text-white transition-all duration-300 hover:-translate-y-1">
+            <ShieldCheck className="w-8 h-8 text-indigo-400 group-hover:text-purple-400 group-hover:scale-110 transition-transform" />
+            <p className="text-sm font-medium group-hover:text-purple-300 transition-colors">
+              Secure & Reliable Services
             </p>
           </div>
 
-          {/* ===== Follow Us ===== */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                className="hover:text-blue-400 transition-colors"
-                aria-label="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/supavsolutions"
-                className="hover:text-blue-400 transition-colors"
-                aria-label="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                className="hover:text-blue-400 transition-colors"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:info@supavsolutions.com"
-                className="hover:text-blue-400 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
+          {/* Trusted */}
+          <div className="flex flex-col items-center gap-2 group hover:text-white transition-all duration-300 hover:-translate-y-1">
+            <Award className="w-8 h-8 text-purple-400 group-hover:text-indigo-400 group-hover:scale-110 transition-transform" />
+            <p className="text-sm font-medium group-hover:text-indigo-300 transition-colors">
+              Trusted Agency Partners
+            </p>
+          </div>
+
+          {/* ISO */}
+          <div className="flex flex-col items-center gap-2 group hover:text-white transition-all duration-300 hover:-translate-y-1">
+            <CheckCircle2 className="w-8 h-8 text-green-400 group-hover:scale-110 transition-transform" />
+            <p className="text-sm font-medium group-hover:text-purple-300 transition-colors">
+              ISO Quality Standards
+            </p>
           </div>
         </div>
 
-        {/* ======= Middle Section (Brand + Subscribe) ======= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 py-10 border-b border-white/10">
-          <div>
-            <h2 className="text-2xl font-semibold text-white mb-3">
-              SuPav Solutions
-            </h2>
-            <p className="text-gray-400 text-sm max-w-md">
-              Empowering businesses through innovative e-commerce solutions,
-              digital growth strategies, and technology-driven success.
+        {/* ================= MAIN GRID ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/10">
+
+          {/* Legal */}
+          <div className="group transition-all duration-300 hover:-translate-y-1">
+            <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
+              Legal
+            </h3>
+            <ul className="space-y-2">
+              {["Terms & Conditions", "Privacy Policy", "Return Policy"].map((item, i) => (
+                <li key={i}>
+                  <Link
+                    to="#"
+                    className="hover:text-indigo-400 hover:underline transition-all"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="group transition-all duration-300 hover:-translate-y-1">
+            <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
+              Quick Links
+            </h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="hover:text-indigo-400 hover:underline transition-all">Home</Link></li>
+              <li><Link to="/services" className="hover:text-indigo-400 hover:underline transition-all">Services</Link></li>
+              <li><Link to="/contact" className="hover:text-indigo-400 hover:underline transition-all">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="group transition-all duration-300 hover:-translate-y-1">
+            <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
+              Contact Us
+            </h3>
+
+            <p className="flex items-center gap-2 mb-2 hover:text-indigo-300 transition">
+              <Mail className="w-4 h-4 text-indigo-400" />
+              <a href="mailto:info@supavsolutions.com">info@supavsolutions.com</a>
+            </p>
+
+            <p className="flex items-center gap-2 mb-2 hover:text-indigo-300 transition">
+              <Phone className="w-4 h-4 text-indigo-400" />
+              <a href="tel:+918860951910">+91 8860951910</a>
+            </p>
+
+            <p className="text-sm text-gray-400 mt-2 hover:text-gray-300 transition">
+              Noida, Uttar Pradesh, India
             </p>
           </div>
 
-          <div className="flex flex-col items-start lg:items-end">
-            <h4 className="text-white font-medium mb-3">
-              Get the latest updates
-            </h4>
+          {/* Social */}
+          <div className="group transition-all duration-300 hover:-translate-y-1">
+            <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
+              Follow Us
+            </h3>
+            <div className="flex space-x-4">
+
+              {/* FB */}
+              <a
+                href="https://www.facebook.com/SuPavSolutions"
+                target="_blank"
+                className="hover:text-indigo-400 hover:scale-110 transition-transform"
+              >
+                <Facebook className="w-6 h-6" />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/107571790/"
+                target="_blank"
+                className="hover:text-indigo-400 hover:scale-110 transition-transform"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+
+              {/* IG */}
+              <a
+                href="https://www.instagram.com/supavsolutions/"
+                target="_blank"
+                className="hover:text-purple-400 hover:scale-110 transition-transform"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+
+              {/* Mail */}
+              <a
+                href="mailto:info@supavsolutions.com"
+                className="hover:text-purple-400 hover:scale-110 transition-transform"
+              >
+                <Mail className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ================= BRAND + SUBSCRIBE ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12 border-b border-white/10">
+
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-3">
+              SuPav Solutions
+            </h2>
+            <p className="text-gray-400 max-w-md hover:text-gray-300 transition">
+              Delivering modern web development, automation & e-commerce solutions
+              with transparency and long-term support.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-start md:items-end">
+            <h4 className="text-white font-medium mb-3">Get the latest updates</h4>
+
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-full overflow-hidden w-full max-w-sm"
+              className="flex items-center bg-white/5 border border-white/10 rounded-full overflow-hidden w-full max-w-sm"
             >
               <input
                 type="email"
@@ -157,39 +173,29 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="bg-blue-500 px-5 py-2 text-white rounded-full hover:bg-blue-600 transition-all"
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-2 text-white rounded-full hover:opacity-90 transition"
               >
                 Subscribe
               </button>
             </form>
-            <p className="text-xs text-gray-500 mt-2">
-              We respect your privacy. No spam ever!
-            </p>
           </div>
+
         </div>
 
-        {/* ======= Bottom Bar ======= */}
+        {/* ================= BOTTOM BAR ================= */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-sm">
-          <p className="text-gray-500 mb-3 md:mb-0">
-            © {currentYear} SuPav Solutions. All rights reserved. | Empowering
-            Your Digital Vision
+          <p className="text-gray-500">
+            © {currentYear} SuPav Solutions — Empowering Digital Growth.
           </p>
-          <div className="flex space-x-6 text-gray-400">
-            <a href="#!" className="hover:text-blue-400 transition-colors">
-              Terms & Conditions
-            </a>
-            <a href="#!" className="hover:text-blue-400 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#!" className="hover:text-blue-400 transition-colors">
-              Cookies
-            </a>
+
+          <div className="flex space-x-6 mt-3 md:mt-0">
+            <Link to="#" className="hover:text-indigo-400 transition hover:underline">Terms</Link>
+            <Link to="#" className="hover:text-indigo-400 transition hover:underline">Privacy</Link>
+            <Link to="#" className="hover:text-indigo-400 transition hover:underline">Cookies</Link>
           </div>
         </div>
-      </div>
 
-      {/* Soft gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none"></div>
+      </div>
     </footer>
   );
 };

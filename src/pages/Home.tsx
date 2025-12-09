@@ -14,11 +14,11 @@ import CTA from "@/components/CTA";
 import ScrollToTop from "@/components/FloatingActions";
 import useScrollAnimation from "@/utils/useScrollAnimation";
 
-const Home = () => {
-  // Scroll animations
+const Home: React.FC = () => {
+  // Scroll-based reveal animations
   useScrollAnimation();
 
-  // Fallback title
+  // Fallback Title (In case Helmet didn't apply yet)
   useEffect(() => {
     document.title = "SuPav Solutions | Empowering Your Digital Future";
   }, []);
@@ -31,24 +31,27 @@ const Home = () => {
         <title>SuPav Solutions | Empowering Your Digital Future</title>
         <meta
           name="description"
-          content="SuPav Solutions helps businesses grow online with expert E-commerce onboarding, digital marketing, and IT consulting."
+          content="SuPav Solutions helps businesses grow online with expert E-commerce onboarding, digital marketing, web development, and IT consulting."
         />
         <meta
           name="keywords"
-          content="SuPav Solutions, e-commerce onboarding, digital marketing, website development, IT consulting, business automation"
+          content="SuPav Solutions, web development, e-commerce onboarding, digital marketing, IT consulting, automation, branding"
         />
+
+        {/* OPEN GRAPH TAGS */}
         <meta property="og:title" content="SuPav Solutions" />
         <meta
           property="og:description"
           content="Empowering businesses with digital innovation and online growth solutions."
         />
-        <meta property="og:image" content="public/logo.png" />
+        <meta property="og:image" content="/logo.png" />
         <meta property="og:url" content="https://supavsolutions.com" />
         <meta name="theme-color" content="#0b1120" />
       </Helmet>
 
-      {/* ⭐ MAIN CONTENT (Navbar/Footer is now App.tsx controlled) */}
+      {/* ⭐ MAIN CONTENT (Navbar / Footer handled in App.tsx) */}
       <main>
+        {/* HERO SECTION */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,6 +60,7 @@ const Home = () => {
           <Hero />
         </motion.section>
 
+        {/* FEATURES */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -66,6 +70,7 @@ const Home = () => {
           <Features />
         </motion.section>
 
+        {/* HOW IT WORKS */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,6 +80,7 @@ const Home = () => {
           <HowItWorks />
         </motion.section>
 
+        {/* TESTIMONIALS */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,6 +90,7 @@ const Home = () => {
           <Testimonials />
         </motion.section>
 
+        {/* PRICING */}
         <motion.section
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -93,6 +100,7 @@ const Home = () => {
           <Pricing />
         </motion.section>
 
+        {/* FAQ */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -102,6 +110,7 @@ const Home = () => {
           <FAQ />
         </motion.section>
 
+        {/* CALL TO ACTION */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -112,7 +121,7 @@ const Home = () => {
         </motion.section>
       </main>
 
-      {/* 🆙 Scroll to top */}
+      {/* Scroll to top floating button */}
       <ScrollToTop />
     </div>
   );

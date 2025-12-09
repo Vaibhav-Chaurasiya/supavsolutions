@@ -18,8 +18,8 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
     { name: "Career", path: "/career" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -34,59 +34,89 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 flex items-center justify-between">
-        
-        {/* ------------------------------ LOGO ------------------------------ */}
-        <Link to="/" className="flex items-center gap-2">
+
+        {/* ---------------------- LOGO ---------------------- */}
+        <Link to="/" className="flex items-center gap-3">
           <img
             src="/logo.png"
             alt="SuPav Solutions"
-            className="w-10 h-10 object-contain"
+            className="w-11 h-11 drop-shadow-lg animate-pulse-slow"
           />
-          <span className="text-2xl font-bold text-white">
-            SuPav<span className="text-blue-400">Solutions</span>
+          <span className="text-2xl font-bold tracking-wide text-white">
+            SuPav
+            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              Solutions
+            </span>
           </span>
         </Link>
 
-        {/* ------------------------- CENTER NAV LINKS ------------------------- */}
-        <ul className="hidden md:flex items-center gap-10 mx-auto">
+        {/* ---------------------- DESKTOP MENU ---------------------- */}
+        <ul className="hidden md:flex items-center gap-6 mx-auto">
+
           {navLinks.map((link) => (
-            <li key={link.name}>
-              <NavLink
-                to={link.path}
-                className={({ isActive }) =>
-                  `text-white/80 text-[16px] font-medium hover:text-blue-400 transition-all ${
-                    isActive ? "text-blue-400" : ""
-                  }`
-                }
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) =>
+                `relative px-5 py-2 rounded-full text-white/80 font-medium transition-all
+                ${isActive ? "text-yellow-400 bg-white/5 border border-white/10" : ""}
+                group`
+              }
+            >
+              {/* TEXT */}
+              {link.name}
+
+              {/* HOVER — MOVING NEON SCAN BORDER */}
+              <span
+                className="absolute inset-0 rounded-full border border-transparent group-hover:border-transparent"
               >
-                {link.name}
-              </NavLink>
-            </li>
+                <span
+                  className="absolute inset-0 rounded-full border-2 opacity-0 group-hover:opacity-100
+                  border-transparent overflow-hidden transition"
+                >
+                  {/* Moving Gradient Line */}
+                  <span
+                    className="absolute w-full h-full -left-full group-hover:left-full 
+                    transition-all duration-700 
+                    bg-gradient-to-r from-yellow-400 via-purple-500 to-indigo-500"
+                  />
+                </span>
+              </span>
+            </NavLink>
           ))}
         </ul>
 
-        {/* --------------------------- RIGHT SIDE BUTTONS --------------------------- */}
+        {/* ---------------------- RIGHT BUTTONS ---------------------- */}
         <div className="hidden md:flex items-center gap-4">
-          <Link
+          {/* LOGIN BUTTON */}
+          <NavLink
             to="/login"
-            className="text-white border border-white/30 px-5 py-2 rounded-full hover:bg-white/10 transition"
+            className="relative px-6 py-2 rounded-full text-white/90 font-medium 
+            bg-white/5 border border-white/20 group overflow-hidden"
           >
             Login
-          </Link>
 
-          
+            {/* Hover border */}
+            <span className="absolute inset-0 rounded-full border-2 border-transparent opacity-0
+              group-hover:opacity-100 transition overflow-hidden">
+              <span
+                className="absolute w-full h-full -left-full group-hover:left-full transition-all duration-700
+                bg-gradient-to-r from-yellow-400 via-purple-500 to-indigo-500"
+              />
+            </span>
+          </NavLink>
         </div>
 
-        {/* ------------------------------ MOBILE MENU BUTTON ------------------------------ */}
+        {/* ---------------------- MOBILE MENU BUTTON ---------------------- */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden text-white"
         >
-          {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* ------------------------------ MOBILE MENU ------------------------------ */}
+      {/* ---------------------- MOBILE DROPDOWN ---------------------- */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -95,28 +125,44 @@ const Navbar = () => {
           className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 py-6"
         >
           <ul className="flex flex-col items-center gap-6">
+
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white/90 text-lg font-medium hover:text-blue-400 transition"
+                className="relative px-6 py-2 rounded-full text-white text-lg font-medium group"
               >
                 {link.name}
+
+                {/* MOBILE hover border */}
+                <span className="absolute inset-0 rounded-full border-2 border-transparent opacity-0
+                  group-hover:opacity-100 transition overflow-hidden">
+                  <span
+                    className="absolute w-full h-full -left-full group-hover:left-full transition-all duration-700
+                    bg-gradient-to-r from-yellow-400 via-purple-500 to-indigo-500"
+                  />
+                </span>
               </NavLink>
             ))}
 
-            <div className="flex flex-col gap-3 mt-4 w-40">
-              <Link
-                to="/login"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white border border-white/30 px-4 py-2 rounded-full text-center hover:bg-white/10 transition"
-              >
-                Login
-              </Link>
+            {/* MOBILE LOGIN */}
+            <NavLink
+              to="/login"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative px-6 py-2 rounded-full text-white text-lg font-medium bg-white/5 border border-white/20 group"
+            >
+              Login
 
-              
-            </div>
+              <span className="absolute inset-0 rounded-full border-2 border-transparent opacity-0
+                group-hover:opacity-100 transition overflow-hidden">
+                <span
+                  className="absolute w-full h-full -left-full group-hover:left-full transition-all duration-700
+                  bg-gradient-to-r from-yellow-400 via-purple-500 to-indigo-500"
+                />
+              </span>
+            </NavLink>
+
           </ul>
         </motion.div>
       )}

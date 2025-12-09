@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import Lottie from "lottie-react";
 import { Button } from "@/components/ui/button";
 
 const allPlans = {
@@ -50,6 +51,7 @@ const allPlans = {
       ],
     },
   ],
+
   Flipkart: [
     {
       title: "Flipkart Basic Plan",
@@ -89,6 +91,7 @@ const allPlans = {
       ],
     },
   ],
+
   Meesho: [
     {
       title: "Meesho Starter Plan",
@@ -130,48 +133,79 @@ const platforms = Object.keys(allPlans);
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState("Amazon");
+  const [sparkle, setSparkle] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("https://lottie.host/d0fb9c95-8684-49c4-a59b-e4e105a456db/5OrD6F8FkK.json")
+      .then((r) => r.json())
+      .then(setSparkle);
+  }, []);
 
   const plans = allPlans[activeTab];
 
   return (
-    <section id="pricing" className="bg-[#0A0B10] text-white py-24">
-      <div className="container mx-auto px-6 text-center">
-        {/* 🔹 Tabs */}
+    <section id="pricing" className="relative bg-gradient-to-b from-[#0A0B10] to-[#0b1120] text-white py-24 overflow-hidden">
+
+      {/* Floating Purple Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(22)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1.5 h-1.5 bg-purple-400 rounded-full opacity-40 animate-pulse"
+            style={{
+              top: `${Math.random() * 90}%`,
+              left: `${Math.random() * 90}%`,
+              animationDelay: `${i * 0.4}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Background Glow */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-600/20 blur-[120px] rounded-full" />
+      <div className="absolute bottom-10 right-10 w-[20rem] h-[20rem] bg-indigo-600/20 blur-[130px] rounded-full" />
+
+      <div className="container mx-auto px-6 text-center relative z-10">
+
+        {/* Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-3">
           {platforms.map((platform) => (
             <button
               key={platform}
               onClick={() => setActiveTab(platform)}
-              className={`px-5 py-2 rounded-full border transition-all duration-300 ${
-                activeTab === platform
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-blue-500 shadow-lg"
-                  : "bg-white/5 text-gray-300 border-white/10 hover:border-blue-500/40"
-              }`}
+              className={`
+                px-5 py-2 rounded-full border transition-all duration-300 backdrop-blur-lg
+                ${
+                  activeTab === platform
+                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white border-purple-400 shadow-lg shadow-purple-600/40"
+                    : "bg-white/5 text-gray-300 border-white/10 hover:border-purple-400/40"
+                }
+              `}
             >
               {platform} SPN Service
             </button>
           ))}
         </div>
 
-        {/* 🧠 Heading */}
+        {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent"
         >
           {activeTab} SPN Service
         </motion.h2>
-        <p className="text-gray-400 max-w-2xl mx-auto mb-16">
+
+        <p className="text-gray-300 max-w-2xl mx-auto mb-16">
           Choose the best plan for your {activeTab} store — optimized strategies
           to boost visibility, growth, and conversions.
         </p>
 
-        {/* 💼 Pricing Cards */}
+        {/* Pricing Cards */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.5 }}
@@ -180,20 +214,30 @@ const Pricing = () => {
             {plans.map((plan, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 hover:border-blue-400/40 hover:bg-white/10 transition-all duration-500 shadow-lg hover:shadow-blue-600/20"
+                whileHover={{ scale: 1.03 }}
+                className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/30 hover:border-purple-400/40 transition-all duration-500 cursor-pointer"
               >
-                <h3 className="text-2xl font-bold text-blue-400 mb-2">
-                  {plan.title}
-                </h3>
-                <p className="text-gray-400 mb-6">{plan.description}</p>
+                {/* Lottie Sparkle */}
+                {sparkle && (
+                  <div className="absolute top-3 right-3 w-10 opacity-90 pointer-events-none">
+                    <Lottie animationData={sparkle} loop />
+                  </div>
+                )}
 
-                <h4 className="text-lg font-semibold text-white mb-4">
-                  What’s Included:
-                </h4>
+                {/* Shine Sweep */}
+                <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></span>
+                </div>
+
+                <h3 className="text-2xl font-bold text-purple-300 mb-2">{plan.title}</h3>
+                <p className="text-gray-300 mb-6">{plan.description}</p>
+
+                <h4 className="text-lg font-semibold text-white mb-4">What’s Included:</h4>
+
                 <ul className="text-left space-y-3 mb-8">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start space-x-2">
@@ -204,10 +248,13 @@ const Pricing = () => {
                 </ul>
 
                 <Button
-                  className="bg-blue-600 hover:bg-blue-700 text-white w-full font-semibold py-2 rounded-lg transition-all"
-                  onClick={() => (window.location.href = "/contact")}
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:brightness-110 text-white w-full font-semibold py-2 rounded-lg transition-all"
+                  onClick={() =>
+                    (window.location.href =
+                      "https://wa.me/918860951910?text=I%20am%20interested%20in%20your%20SPN%20service%20plan")
+                  }
                 >
-                  Get Started
+                  Chat on WhatsApp
                 </Button>
               </motion.div>
             ))}

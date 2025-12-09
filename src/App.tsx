@@ -19,12 +19,13 @@ import Contact from "@/pages/Contact";
 import Career from "@/pages/Career";
 import Login from "@/pages/Login";
 import ForgotPassword from "@/pages/ForgotPassword";
-
-// ⭐ NEW PAGE
-import Portfolio from "@/pages/Portfolio"; // 🔥 Portfolio Import
+import Portfolio from "@/pages/Portfolio";
 
 // Floating Actions
 import FloatingActions from "@/components/FloatingActions";
+
+// ⭐ SCROLL TO TOP ON ROUTE CHANGE
+import ScrollToTopOnRoute from "@/components/ScrollToTopOnRoute";
 
 const queryClient = new QueryClient();
 
@@ -52,7 +53,11 @@ const App = () => {
 
         {/* GLOBAL LAYOUT */}
         <div className="flex flex-col min-h-screen bg-[#0A0B10] text-white">
+
           <Navbar />
+
+          {/* ⭐ SCROLL TO TOP TRIGGER */}
+          <ScrollToTopOnRoute />
 
           {/* ROUTES */}
           <main className="flex-grow">
@@ -64,7 +69,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/career" element={<Career />} />
 
-              {/* ⭐ NEW PORTFOLIO ROUTE */}
+              {/* ⭐ PORTFOLIO */}
               <Route path="/portfolio" element={<Portfolio />} />
 
               {/* Auth Pages */}
