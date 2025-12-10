@@ -4,6 +4,9 @@ import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+// SCROLL TO TOP FUNCTION
+const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,7 +39,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 flex items-center justify-between">
 
         {/* ---------------------- LOGO ---------------------- */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link
+          to="/"
+          onClick={scrollTop}
+          className="flex items-center gap-3"
+        >
           <img
             src="/logo.png"
             alt="SuPav Solutions"
@@ -57,29 +64,19 @@ const Navbar = () => {
             <NavLink
               key={link.name}
               to={link.path}
+              onClick={scrollTop}
               className={({ isActive }) =>
                 `relative px-5 py-2 rounded-full text-white/80 font-medium transition-all
                 ${isActive ? "text-yellow-400 bg-white/5 border border-white/10" : ""}
                 group`
               }
             >
-              {/* TEXT */}
               {link.name}
 
-              {/* HOVER — MOVING NEON SCAN BORDER */}
-              <span
-                className="absolute inset-0 rounded-full border border-transparent group-hover:border-transparent"
-              >
-                <span
-                  className="absolute inset-0 rounded-full border-2 opacity-0 group-hover:opacity-100
-                  border-transparent overflow-hidden transition"
-                >
-                  {/* Moving Gradient Line */}
-                  <span
-                    className="absolute w-full h-full -left-full group-hover:left-full 
-                    transition-all duration-700 
-                    bg-gradient-to-r from-yellow-400 via-purple-500 to-indigo-500"
-                  />
+              {/* Animated Neon Hover Border */}
+              <span className="absolute inset-0 rounded-full border border-transparent group-hover:border-transparent">
+                <span className="absolute inset-0 rounded-full border-2 opacity-0 group-hover:opacity-100 border-transparent overflow-hidden transition">
+                  <span className="absolute w-full h-full -left-full group-hover:left-full transition-all duration-700 bg-gradient-to-r from-yellow-400 via-purple-500 to-indigo-500" />
                 </span>
               </span>
             </NavLink>
@@ -88,15 +85,15 @@ const Navbar = () => {
 
         {/* ---------------------- RIGHT BUTTONS ---------------------- */}
         <div className="hidden md:flex items-center gap-4">
-          {/* LOGIN BUTTON */}
+
           <NavLink
             to="/login"
+            onClick={scrollTop}
             className="relative px-6 py-2 rounded-full text-white/90 font-medium 
             bg-white/5 border border-white/20 group overflow-hidden"
           >
             Login
 
-            {/* Hover border */}
             <span className="absolute inset-0 rounded-full border-2 border-transparent opacity-0
               group-hover:opacity-100 transition overflow-hidden">
               <span
@@ -130,12 +127,14 @@ const Navbar = () => {
               <NavLink
                 key={link.name}
                 to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  scrollTop();
+                  setIsMobileMenuOpen(false);
+                }}
                 className="relative px-6 py-2 rounded-full text-white text-lg font-medium group"
               >
                 {link.name}
 
-                {/* MOBILE hover border */}
                 <span className="absolute inset-0 rounded-full border-2 border-transparent opacity-0
                   group-hover:opacity-100 transition overflow-hidden">
                   <span
@@ -149,7 +148,10 @@ const Navbar = () => {
             {/* MOBILE LOGIN */}
             <NavLink
               to="/login"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                scrollTop();
+                setIsMobileMenuOpen(false);
+              }}
               className="relative px-6 py-2 rounded-full text-white text-lg font-medium bg-white/5 border border-white/20 group"
             >
               Login

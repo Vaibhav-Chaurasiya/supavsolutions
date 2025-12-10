@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ScrollToTop from "@/components/FloatingActions";
 import { Link } from "react-router-dom";
 import { CheckCircle, Star, Clock, Users } from "lucide-react";
+import TeamSection from "@/components/TeamSection";
 
 /* Animation Variant */
 const fadeUp = {
@@ -202,6 +203,8 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* ========================= TEAM SECTION (Dynamic) ========================= */}
+      <TeamSection />
 
       {/* ========================= STATS ========================= */}
       <section className="container mx-auto px-6 py-12 grid md:grid-cols-4 gap-6">

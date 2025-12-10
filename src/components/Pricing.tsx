@@ -247,15 +247,7 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <Button
-                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:brightness-110 text-white w-full font-semibold py-2 rounded-lg transition-all"
-                  onClick={() =>
-                    (window.location.href =
-                      "https://wa.me/918860951910?text=I%20am%20interested%20in%20your%20SPN%20service%20plan")
-                  }
-                >
-                  Chat on WhatsApp
-                </Button>
+                
               </motion.div>
             ))}
           </motion.div>

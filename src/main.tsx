@@ -9,13 +9,16 @@ import "./index.css";
 // Ensure root element exists
 const rootElement = document.getElementById("root");
 if (!rootElement) {
-  throw new Error("❌ Root element not found! Please add <div id='root'></div> in index.html");
+  throw new Error(
+    "❌ Root element not found! Please add <div id='root'></div> in index.html"
+  );
 }
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
+      {/* ⭐ IMPORTANT for Hostinger / cPanel / Shared Hosting */}
+      <BrowserRouter basename="/">
         <App />
       </BrowserRouter>
     </HelmetProvider>

@@ -9,9 +9,48 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  // ================= SOCIAL ICON LOOP ANIMATION =================
+  const socials = [
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/SuPavSolutions",
+      color: "#6366F1", // Indigo
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/107571790/",
+      color: "#8B5CF6", // Violet
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/supavsolutions/",
+      color: "#F472B6", // Pink glow
+    },
+    {
+      icon: Mail,
+      href: "mailto:info@supavsolutions.com",
+      color: "#A78BFA", // Soft purple
+    },
+  ];
+
+  const glowAnimation = {
+    initial: { opacity: 0.4, scale: 1 },
+    animate: (i) => ({
+      opacity: [0.4, 1, 0.4],
+      scale: [1, 1.25, 1],
+      transition: {
+        duration: 1.4,
+        repeat: Infinity,
+        delay: i * 0.45,
+        ease: "easeInOut",
+      },
+    }),
+  };
 
   return (
     <footer className="bg-[#0c0e12] text-gray-400 pt-20 pb-10 border-t border-white/10">
@@ -19,7 +58,7 @@ const Footer = () => {
 
         {/* ================= TRUST BADGES ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-3 text-center gap-6 mb-16">
-          
+
           {/* Secure */}
           <div className="flex flex-col items-center gap-2 group hover:text-white transition-all duration-300 hover:-translate-y-1">
             <ShieldCheck className="w-8 h-8 text-indigo-400 group-hover:text-purple-400 group-hover:scale-110 transition-transform" />
@@ -54,16 +93,18 @@ const Footer = () => {
               Legal
             </h3>
             <ul className="space-y-2">
-              {["Terms & Conditions", "Privacy Policy", "Return Policy"].map((item, i) => (
-                <li key={i}>
-                  <Link
-                    to="#"
-                    className="hover:text-indigo-400 hover:underline transition-all"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Terms & Conditions", "Privacy Policy", "Return Policy"].map(
+                (item, i) => (
+                  <li key={i}>
+                    <Link
+                      to="#"
+                      className="hover:text-indigo-400 hover:underline transition-all"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -73,9 +114,30 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-indigo-400 hover:underline transition-all">Home</Link></li>
-              <li><Link to="/services" className="hover:text-indigo-400 hover:underline transition-all">Services</Link></li>
-              <li><Link to="/contact" className="hover:text-indigo-400 hover:underline transition-all">Contact</Link></li>
+              <li>
+                <Link
+                  to="/"
+                  className="hover:text-indigo-400 hover:underline transition-all"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-indigo-400 hover:underline transition-all"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="hover:text-indigo-400 hover:underline transition-all"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -87,7 +149,9 @@ const Footer = () => {
 
             <p className="flex items-center gap-2 mb-2 hover:text-indigo-300 transition">
               <Mail className="w-4 h-4 text-indigo-400" />
-              <a href="mailto:info@supavsolutions.com">info@supavsolutions.com</a>
+              <a href="mailto:info@supavsolutions.com">
+                info@supavsolutions.com
+              </a>
             </p>
 
             <p className="flex items-center gap-2 mb-2 hover:text-indigo-300 transition">
@@ -96,54 +160,40 @@ const Footer = () => {
             </p>
 
             <p className="text-sm text-gray-400 mt-2 hover:text-gray-300 transition">
-              Noida, Uttar Pradesh, India
+              Chipiyana Buzurg, Greater Noida
             </p>
           </div>
 
-          {/* Social */}
+          {/* ================= SOCIAL ICONS WITH GLOW EFFECT ================= */}
           <div className="group transition-all duration-300 hover:-translate-y-1">
             <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
               Follow Us
             </h3>
+
             <div className="flex space-x-4">
-
-              {/* FB */}
-              <a
-                href="https://www.facebook.com/SuPavSolutions"
-                target="_blank"
-                className="hover:text-indigo-400 hover:scale-110 transition-transform"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/company/107571790/"
-                target="_blank"
-                className="hover:text-indigo-400 hover:scale-110 transition-transform"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-
-              {/* IG */}
-              <a
-                href="https://www.instagram.com/supavsolutions/"
-                target="_blank"
-                className="hover:text-purple-400 hover:scale-110 transition-transform"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-
-              {/* Mail */}
-              <a
-                href="mailto:info@supavsolutions.com"
-                className="hover:text-purple-400 hover:scale-110 transition-transform"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
+              {socials.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.a
+                    key={i}
+                    href={item.href}
+                    target="_blank"
+                    variants={glowAnimation}
+                    initial="initial"
+                    animate="animate"
+                    custom={i}
+                    className="transition-transform hover:scale-110"
+                    style={{
+                      color: item.color,
+                      filter: `drop-shadow(0 0 6px ${item.color})`,
+                    }}
+                  >
+                    <Icon className="w-6 h-6" />
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
-
         </div>
 
         {/* ================= BRAND + SUBSCRIBE ================= */}
@@ -154,8 +204,8 @@ const Footer = () => {
               SuPav Solutions
             </h2>
             <p className="text-gray-400 max-w-md hover:text-gray-300 transition">
-              Delivering modern web development, automation & e-commerce solutions
-              with transparency and long-term support.
+              Delivering modern web development, automation & e-commerce
+              solutions with transparency and long-term support.
             </p>
           </div>
 
@@ -179,7 +229,6 @@ const Footer = () => {
               </button>
             </form>
           </div>
-
         </div>
 
         {/* ================= BOTTOM BAR ================= */}
@@ -189,12 +238,26 @@ const Footer = () => {
           </p>
 
           <div className="flex space-x-6 mt-3 md:mt-0">
-            <Link to="#" className="hover:text-indigo-400 transition hover:underline">Terms</Link>
-            <Link to="#" className="hover:text-indigo-400 transition hover:underline">Privacy</Link>
-            <Link to="#" className="hover:text-indigo-400 transition hover:underline">Cookies</Link>
+            <Link
+              to="#"
+              className="hover:text-indigo-400 transition hover:underline"
+            >
+              Terms
+            </Link>
+            <Link
+              to="#"
+              className="hover:text-indigo-400 transition hover:underline"
+            >
+              Privacy
+            </Link>
+            <Link
+              to="#"
+              className="hover:text-indigo-400 transition hover:underline"
+            >
+              Cookies
+            </Link>
           </div>
         </div>
-
       </div>
     </footer>
   );

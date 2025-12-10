@@ -99,6 +99,8 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg md:text-xl font-semibold">Phone</h3>
                 <p className="text-gray-300 text-sm md:text-base mt-1">+91 8860951910</p>
+                <p className="text-gray-300 text-sm md:text-base mt-1">+91 8860411910</p>
+                <p className="text-gray-300 text-sm md:text-base mt-1">+91 8860271910</p>
                 <p className="text-gray-400 text-xs mt-1">Available Mon–Sat, 9 AM – 5 PM</p>
               </div>
             </div>
@@ -123,9 +125,9 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg md:text-xl font-semibold">Office Location</h3>
                 <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-1">
-                  SuPav Solutions, First Floor, Numberdar Plaza,<br />
-                  Near Canara Bank, Chipiyana Buzurg,<br />
-                  Greater Noida, Ghaziabad, UP 201009
+                  SuPav Solutions<br />
+                  Chipiyana Buzurg,<br />
+                  Greater Noida, U.P - 201009
                 </p>
                 <a
                   href="https://maps.app.goo.gl/kJHUsruDdK9Vw1UB8"
@@ -225,7 +227,7 @@ const Contact = () => {
             className="w-full h-48 md:h-64 rounded-xl border-0 shadow-xl"
             loading="lazy"
             allowFullScreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.2902047726817!2d77.47443957604307!3d28.56099347569311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea19d34ef469%3A0x7b754262e7494005!2sSuPav%20Solutions!5e0!3m2!1sen!2sin!4v1733038250000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0674136954076!2d77.45049181114908!3d28.6277415841966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef230eac63c9%3A0xa9d630a15887947e!2sSuPav%20Solutions!5e0!3m2!1sen!2sin!4v1765340206456!5m2!1sen!2sin"
           ></iframe>
         </motion.div>
       </section>
